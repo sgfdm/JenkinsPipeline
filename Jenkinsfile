@@ -3,17 +3,19 @@ pipeline {
     environment {
         DOCKERHUB_CREDENTIALS=credentials('sathu21-dockerhub')
              }
-    stages {
-        stage('Build-SathusanGanesathasan') {
+    stages {    
+	     stage('Build-SathusanGanesathasan') {
             steps {
-		    // bat 'docker build -t sathutest/maven:3.5.0'
+	    // bat 'docker build -t sathutest/maven:3.5.0'
                 script {
-                   MY_CONTAINER = bat(script: '@docker run -d -i maven:3.5.0', returnStdout: true).trim()
-                   bat "docker exec ${MY_CONTAINER} maven --version "
+                   MY_CONTAINER = bat(script: '@docker run -d -i python:3.10.7-alpine', returnStdout: true).trim()
+                   bat "docker exec ${MY_CONTAINER} python --version "
                    bat "docker rm -f ${MY_CONTAINER}"
                         }
                     }
                 }
+                }
+	    
         stage('Login-SathusanGanesathasan') {
             steps {
                 bat 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'

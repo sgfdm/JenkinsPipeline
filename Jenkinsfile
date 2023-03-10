@@ -24,10 +24,11 @@ agent any
 				bat 'docker push python:3.10.7-alpine/sathu'
 			}
 		}
+    }
       post {
         always {
                 bat 'docker logout'
         }
       }        
             }
-        }
+        

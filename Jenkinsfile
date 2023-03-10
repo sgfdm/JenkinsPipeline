@@ -1,7 +1,7 @@
 pipeline {
 agent any
     environment {
-        DOCKERHUB_CREDENTIALS=credentials('sathu21')
+        DOCKERHUB_CREDENTIALS=credentials('sathu21-dockerhub')
              }
     stages {
         stage('Build-SathusanGanesathasan') {

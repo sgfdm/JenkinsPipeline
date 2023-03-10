@@ -14,7 +14,7 @@ pipeline {
                         }
                     }
                 }
-                }
+                
 	    
         stage('Login-SathusanGanesathasan') {
             steps {

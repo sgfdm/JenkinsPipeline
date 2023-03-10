@@ -4,7 +4,7 @@ agent any
         DOCKERHUB_CREDENTIALS=credentials('sathu21-dockerhub')
              }
     stages {
-        stage('Build-SathusanGanesathasan') {
+       /* stage('Build-SathusanGanesathasan') {
             steps {
                 script {
                    MY_CONTAINER = bat(script: '@docker run -d -i python:3.10.7-alpine', returnStdout: true).trim()
@@ -12,7 +12,7 @@ agent any
                    bat "docker rm -f ${MY_CONTAINER}"
                         }
                     }
-                }
+                }*/
         stage('Login-SathusanGanesathasan') {
             steps {
                 bat 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'

@@ -1,5 +1,5 @@
 pipeline {
-agent none
+	agent { label 'linux' }
     environment {
         DOCKERHUB_CREDENTIALS=credentials('sathu21-dockerhub')
              }
